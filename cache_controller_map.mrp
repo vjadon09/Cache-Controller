@@ -1,0 +1,542 @@
+Release 13.4 Map O.87xd (lin64)
+Xilinx Mapping Report File for Design 'cache_controller'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off
+-c 100 -o cache_controller_map.ncd cache_controller.ngd cache_controller.pcf 
+Target Device  : xc3s500e
+Target Package : fg320
+Target Speed   : -5
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Tue Oct 15 12:07:58 2024
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   68
+Logic Utilization:
+  Total Number Slice Registers:         562 out of   9,312    6%
+    Number used as Flip Flops:          559
+    Number used as Latches:               3
+  Number of 4 input LUTs:               494 out of   9,312    5%
+Logic Distribution:
+  Number of occupied Slices:            480 out of   4,656   10%
+    Number of Slices containing only related logic:     480 out of     480 100%
+    Number of Slices containing unrelated logic:          0 out of     480   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         580 out of   9,312    6%
+    Number used as logic:               319
+    Number used as a route-thru:         86
+    Number used as Shift registers:     175
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 96 out of     232   41%
+    IOB Flip Flops:                      49
+  Number of RAMB16s:                      7 out of      20   35%
+  Number of BUFGMUXs:                     2 out of      24    8%
+  Number of BSCANs:                       1 out of       1  100%
+
+  Number of RPM macros:           12
+Average Fanout of Non-Clock Nets:                2.76
+
+Peak Memory Usage:  704 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   2 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:43 - No license file was found in the standard Xilinx license
+directory.
+WARNING:Security:44 - Since no license file was found,
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net big_cpu/updPat_or0000 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net control0<13> is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA1> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA2> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA3> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA4> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA5> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA6> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA7> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA9> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA10> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA11> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA12> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA13> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA14> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA15> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA17> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA18> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA19> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA20> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA21> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA22> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA23> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA25> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA26> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA27> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA28> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA29> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA30> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA31> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB1> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB2> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB3> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB4> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB5> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB9> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB10> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB11> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB12> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB13> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB17> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB18> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB19> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB20> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB21> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB25> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB26> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB27> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB28> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB29> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr
+   /ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:1063 - Issue with pin connections and/or configuration
+   on block:<Mram_tag_reg.A>:<RAMB16_RAMB16A>.  The block is configured to use
+   an input parity pins. There is a dangling output parity pin.
+WARNING:PhysDesignRules:1098 - BlockRAM has no data input.The Write Enable pin
+   WEB of comp Mram_tag_reg.B has an active signal but no data input pins are
+   connected. Invalid data may be written to the BlockRAM.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB0> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB1> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB2> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB3> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB4> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB5> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB6> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIB7> on
+   block:<Mram_tag_reg.B>:<RAMB16_RAMB16B>.
+
+Section 3 - Informational
+-------------------------
+INFO:Security:51 - The XILINXD_LICENSE_FILE environment variable is not set.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
+'/CMC/licenses/xilinx.license'.
+INFO:Security:54 - 'xc3s500e' is a WebPack part.
+INFO:LIT:243 - Logical network CS has no load.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  19 block(s) removed
+ 130 block(s) optimized away
+   3 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[10].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[11].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[12].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[13].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[14].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[1].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[2].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[3].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[4].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[5].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[6].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[7].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[8].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[9].U_LUT" (ROM)
+removed.
+Loadless block "sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DSR" (ROM) removed.
+Loadless block "sys_ila/U0/I_YES_D.U_ILA/U_TRIG/U_TC/I_STORAGE_QUAL.U_CAP_B"
+(ROM) removed.
+The signal "control0<27>" is sourceless and has been removed.
+The signal "control0<28>" is sourceless and has been removed.
+The signal "control0<29>" is sourceless and has been removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[8].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_HCE" (ROM)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+VCC 		XST_VCC
+GND 		big_sdram/XST_GND
+GND 		sram/XST_GND
+VCC 		sram/XST_VCC
+GND 		sys_icon/XST_GND
+VCC 		sys_icon/XST_VCC
+LUT4 		sys_ila/U0/I_YES_D.U_ILA/U_STAT/F_SSTAT[6].I_STAT.U_STAT
+   optimized to 0
+LUT4
+		sys_ila/U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_
+lut<6>
+   optimized to 0
+GND 		sys_ila/XST_GND
+VCC 		sys_ila/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CLK_SRC                            | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| CPU_ADDR<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<2>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_ADDR<3>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<4>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<5>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<6>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<7>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<8>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<9>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<10>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<11>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<12>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<13>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<14>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_ADDR<15>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DIN<0>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DIN<1>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DIN<2>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DIN<3>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DIN<4>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DIN<5>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DIN<6>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DIN<7>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| CPU_DOUT<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DOUT<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DOUT<2>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DOUT<3>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DOUT<4>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DOUT<5>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DOUT<6>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_DOUT<7>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| CPU_WR_RD                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| FSM_STATE<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| FSM_STATE<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| FSM_STATE<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| MEMSTRB                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| RDY                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<5>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DIN<7>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_DOUT<0>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_DOUT<1>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_DOUT<2>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_DOUT<3>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_DOUT<4>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_DOUT<5>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_DOUT<6>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_DOUT<7>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_MEM_ADDR<0>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<1>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<2>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<3>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<4>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<5>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_MEM_ADDR<6>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<7>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_MEM_ADDR<8>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<9>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<10>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<11>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_MEM_ADDR<12>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<13>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<14>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SDRAM_MEM_ADDR<15>                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SDRAM_MEM_WR_RD                    | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_ADDR<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_ADDR<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_ADDR<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_ADDR<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_ADDR<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_ADDR<5>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_ADDR<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_ADDR<7>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DIN<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DIN<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DIN<2>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DIN<3>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DIN<4>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DIN<5>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DIN<6>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DIN<7>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| SRAM_DOUT<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DOUT<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DOUT<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DOUT<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DOUT<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DOUT<5>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DOUT<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| SRAM_DOUT<7>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_CDONE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_CMPRESET_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_NS0_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_NS1_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_SCMPCE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_SCRST_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_WHCMPCE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_WLCMPCE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_SCNT_CMP_I_SRL16.U_GA
+ND_SRL16_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_WCNT_HCMP_I_SRL16.U_G
+AND_SRL16_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_WCNT_LCMP_I_SRL16.U_G
+AND_SRL16_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_SRL
+16.U_GANDX_SRL16_MSET
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.
